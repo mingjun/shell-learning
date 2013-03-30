@@ -1,0 +1,23 @@
+* ssh proxy
+  ssh -qTfnN -D 3128 www.xumingjun.name
+* tar pipe
+  tar -c something | ssh some.site.com 'cat > some.tar'
+  tar -c sth | ssh some.site.com 'tar -x'
+  ssh some.site.com 'tar -c' | tar -x
+* rsync
+** local sync
+   rsync -tvzrp --delete --exclude '*~' source/ target/
+** remote sync
+   tar -c source | ssh some.site.com 'tar -x'
+   ssh some.site.com
+   diff -rq source target
+   rsync -tvzrp --delete --exclude '*~' source/ target/
+
+* utils for dev
+| package        | description   |
+|----------------+---------------|
+| curl           | http debug    |
+| html-xml-utils | handle html   |
+| apache2-utils  | for webserver |
+| pdftotext      |               |
+| html2text      |               |
