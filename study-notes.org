@@ -21,3 +21,7 @@
 | apache2-utils  | for webserver |
 | pdftotext      |               |
 | html2text      |               |
+
+
+* apt update
+apt-get -o Acquire::http::proxy="http://www.abc.com:3128/" update
